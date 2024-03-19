@@ -4,7 +4,7 @@ import * as express from "express";
 const app = express();
 
 app.use(express.json());
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 app.get("/", (req, res) => res.send("Express on Vercel"));
 app.post("/dijkstra", async (req: Request, res: Response) => {
   try {
