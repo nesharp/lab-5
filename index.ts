@@ -1,11 +1,11 @@
-import  { Request, Response } from "express";
+import { Request, Response } from "express";
 import { getDeikstra } from "./dijkstra";
 import * as express from "express";
 const app = express();
 
 app.use(express.json());
 const port = process.env.PORT || 3000;
-
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.post("/dijkstra", async (req: Request, res: Response) => {
   try {
     const body = req.body;
