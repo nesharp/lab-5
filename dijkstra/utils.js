@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.convertToDeikstra = void 0;
+exports.convertToString = exports.convertToDeikstra = void 0;
 var convertToDeikstra = function (graph) {
     var graphObj = {};
     for (var i = 0; i < graph.length; i++) {
@@ -17,3 +17,7 @@ var convertToDeikstra = function (graph) {
     return graphObj;
 };
 exports.convertToDeikstra = convertToDeikstra;
+var convertToString = function (graph) {
+    return graph.map(function (el) { return el.join(" "); }).join("\n");
+};
+exports.convertToString = convertToString;

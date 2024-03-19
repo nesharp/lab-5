@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getDeikstra = void 0;
-// import { dijkstra } from "./dijkstra";
 var dijkstra_1 = require("./dijkstra");
 var utils_1 = require("./utils");
 var getDeikstra = function (incomeGraph, start) {

@@ -1,7 +1,6 @@
-// import { dijkstra } from "./dijkstra";
 import { Graph } from "./dijkstra";
-import { convertToDeikstra } from "./utils";
-
+import { convertToDeikstra, convertToString } from "./utils";
+import { graph } from "./settings";
 export const getDeikstra = (incomeGraph: string[][], start: string) => {
   const newGraph = incomeGraph.map(([from, to, val]) => [
     from,

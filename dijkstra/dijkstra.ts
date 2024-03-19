@@ -17,7 +17,15 @@ export class Graph {
     });
   }
   distancies() {
-    Object.keys(this.distances).forEach((key) => {
+    const keys = new Set<string>();
+    Object.keys(this.graph).forEach((key) => {
+      keys.add(key);
+      Object.keys(this.graph[key]).forEach((key) => {
+        keys.add(key);
+      });
+    });
+
+    keys.forEach((key:any) => {
       this.distances[key] = this.getLength(key);
     });
     return this.distances;

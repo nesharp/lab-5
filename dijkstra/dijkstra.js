@@ -26,7 +26,14 @@ var Graph = /** @class */ (function () {
     }
     Graph.prototype.distancies = function () {
         var _this = this;
-        Object.keys(this.distances).forEach(function (key) {
+        var keys = new Set();
+        Object.keys(this.graph).forEach(function (key) {
+            keys.add(key);
+            Object.keys(_this.graph[key]).forEach(function (key) {
+                keys.add(key);
+            });
+        });
+        keys.forEach(function (key) {
             _this.distances[key] = _this.getLength(key);
         });
         return this.distances;
