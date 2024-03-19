@@ -38,6 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var dijkstra_1 = require("./dijkstra");
 var express = require("express");
+var belman_1 = require("./belman");
 var app = express();
 app.use(express.json());
 var port = process.env.PORT || 8000;
@@ -48,6 +49,21 @@ app.post("/dijkstra", function (req, res) { return __awaiter(void 0, void 0, voi
         try {
             body = req.body;
             result = (0, dijkstra_1.getDeikstra)(body.graph, body.start);
+            res.status(200).json(result);
+        }
+        catch (e) {
+            console.log(e);
+            res.status(500).send("Internal server error");
+        }
+        return [2 /*return*/];
+    });
+}); });
+app.post("/belman", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var body, result;
+    return __generator(this, function (_a) {
+        try {
+            body = req.body;
+            result = (0, belman_1.getBelman)(body.graph, body.start);
             res.status(200).json(result);
         }
         catch (e) {
