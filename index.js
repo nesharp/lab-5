@@ -36,10 +36,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = require("express");
 var dijkstra_1 = require("./dijkstra");
-var app = (0, express_1.default)();
-app.use(express_1.default.json());
+var express = require("express");
+var app = express();
+app.use(express.json());
 var port = process.env.PORT || 8000;
 app.post("/dijkstra", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var body, result;

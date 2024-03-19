@@ -1,6 +1,6 @@
-import express, { Request, Response } from "express";
+import  { Request, Response } from "express";
 import { getDeikstra } from "./dijkstra";
-
+import * as express from "express";
 const app = express();
 
 app.use(express.json());
