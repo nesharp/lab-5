@@ -53,7 +53,7 @@ export class Graph {
       this.steps.push({
         from,
         to,
-        comment: `${from} -> ${to} = ${this.distancies[to]}`,
+        comment: `${from}->${to} = ${this.distancies[to]} \nПояснення:\тЙдемо від вершини ${from}, яку ми отримали підетапом раніше.Далі йдемо до вершини $${from} і змінюємо її значення на ${this.distancies[from]}`,
         currentDistancies: { ...this.distancies },
       });
       return false;
@@ -65,7 +65,8 @@ export class Graph {
       this.steps.push({
         from,
         to,
-        comment: `${from} -> ${to} = ${this.distancies[to]}`,
+        // comment: `М${from} -> ${to} = ${this.distancies[to]}`,
+        comment: `${from}->${to} = ${this.distancies[to]} \nПояснення:\тЙдемо від вершини ${from}, яку ми отримали підетапом раніше.Далі йдемо до вершини $${from} і змінюємо її значення на ${this.distancies[from]}`,
         currentDistancies: { ...this.distancies },
       });
       console.log("Alert! Infinity!");
