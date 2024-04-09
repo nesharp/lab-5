@@ -53,7 +53,7 @@ export class Graph {
       this.steps.push({
         from,
         to,
-        comment: `${from}->${to} = ${this.distancies[to]} \nПояснення:\nЙдемо від вершини ${from}, яку ми отримали підетапом раніше.Далі йдемо до вершини ${from} і змінюємо її значення на ${this.distancies[from]}`,
+        comment: `${from}->${to} = ${this.distancies[to]} \nПояснення:\nЙдемо від вершини ${from}, яку ми отримали підетапом раніше.Далі йдемо до вершини ${to} і змінюємо її значення на ${this.distancies[from]}`,
         currentDistancies: { ...this.distancies },
       });
       return false;
@@ -66,7 +66,7 @@ export class Graph {
         from,
         to,
         // comment: `М${from} -> ${to} = ${this.distancies[to]}`,
-        comment: `${from}->${to} = ${this.distancies[to]} \nПояснення:\тЙдемо від вершини ${from}, яку ми отримали підетапом раніше.Далі йдемо до вершини $${from} і змінюємо її значення на ${this.distancies[from]}`,
+        comment: `${from}->${to} = ${this.distancies[to]} \nПояснення:\тЙдемо від вершини ${from}, яку ми отримали підетапом раніше.Далі йдемо до вершини $${to} і змінюємо її значення на ${this.distancies[from]}`,
         currentDistancies: { ...this.distancies },
       });
       console.log("Alert! Infinity!");
@@ -75,7 +75,7 @@ export class Graph {
       this.steps.push({
         from,
         to,
-        comment: `Ми не змінюєм так, як кінцеве значення не буде меншим`,
+        comment: `Ми не змінюєм значення так, як кінцеве значення не буде меншим.\nПояснення: ${from}->${to} = ${this.distancies[to]}`,
         currentDistancies: { ...this.distancies },
       });
       return false;
